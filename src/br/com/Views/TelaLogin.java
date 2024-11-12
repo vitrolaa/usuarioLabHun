@@ -28,11 +28,11 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     public void logar() {
-        String sql = "select * from hlogin where login = ? and senha = ?";
+        String sql = "select * from login where email = ? and senha = ?";
 
         try {
             pst = conexao.prepareCall(sql);
-            pst.setString(1, txtLogin.getText());
+            pst.setString(1, txtEmail.getText());
             pst.setString(2, txtSenha.getText());
             
 
@@ -42,7 +42,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Nome/Email/cargo invalidos ");
+                JOptionPane.showMessageDialog(null, "Email ou senha invalido ");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Tela login " + e);
@@ -55,14 +55,14 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtLogin = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         blStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Login");
+        jLabel1.setText("Email");
 
         jLabel2.setText("senha");
 
@@ -93,7 +93,7 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtLogin))))
+                                .addComponent(txtEmail))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -105,7 +105,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -166,7 +166,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField txtLogin;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

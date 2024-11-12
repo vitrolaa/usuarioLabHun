@@ -44,43 +44,6 @@ public class LaboratorioDAO {
         }
 
     }
-    
-    public void inserirLab(LaboratorioDTO objDTO) {
-    String sql = "INSERT INTO laboratorio (numeroDaSala, id_equipamento) VALUES (?, ?)";
-
-    try {
-        conexao = ConexaoDAO.conector();
-        pst = conexao.prepareStatement(sql);
-
-        // Definindo os parâmetros para o INSERT
-        pst.setString(1, objDTO.getnSala());
-        pst.setInt(2, objDTO.getIdEquipamento());  // Assumindo que id_equipamento já vem com o ID do equipamento associado.
-
-        int add = pst.executeUpdate(); // Executando a inserção no banco de dados
-
-        if (add > 0) {
-            JOptionPane.showMessageDialog(null, "Laboratório inserido com sucesso!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro ao inserir laboratório.");
-        }
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao inserir dados: " + e.getMessage());
-        e.printStackTrace();
-    } finally {
-        try {
-            if (pst != null) {
-                pst.close();
-            }
-            if (conexao != null) {
-                conexao.close();
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao fechar conexão: " + e);
-        }
-    }
-}
-
-    
 
     public void editarLab(LaboratorioDTO objDTO) {
 

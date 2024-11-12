@@ -21,7 +21,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnManutencao = new javax.swing.JButton();
         btnPecas = new javax.swing.JButton();
         btnTecnicos = new javax.swing.JButton();
-        btnUsuario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -66,13 +65,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnUsuario.setText("Usuarios");
-        btnUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuarioActionPerformed(evt);
-            }
-        });
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/logo.png"))); // NOI18N
 
         jButton1.setText("Cadastrar");
@@ -106,11 +98,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnTecnicos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTecnicos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -128,15 +118,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLaboratorio)
                     .addComponent(btnManutencao)
-                    .addComponent(btnUsuario)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(btnTecnicos))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEquipamentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnPecas)
-                        .addComponent(btnTecnicos)))
+                    .addComponent(btnPecas))
                 .addContainerGap())
         );
 
@@ -156,12 +144,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnManutencaoActionPerformed
 
-    private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
-        TelaUsuario tUsuario = new TelaUsuario();
-        tUsuario.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnUsuarioActionPerformed
-
     private void btnPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPecasActionPerformed
         TelaPecas tPecas = new TelaPecas();
         tPecas.setVisible(true);
@@ -169,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPecasActionPerformed
 
     private void btnEquipamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipamentosActionPerformed
-        TelaEquipamentos tEquipamentos = new TelaEquipamentos();
+        TelaMaquina tEquipamentos = new TelaMaquina();
         tEquipamentos.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnEquipamentosActionPerformed
@@ -225,7 +207,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnManutencao;
     private javax.swing.JButton btnPecas;
     private javax.swing.JButton btnTecnicos;
-    private javax.swing.JButton btnUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

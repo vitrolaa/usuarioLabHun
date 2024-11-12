@@ -2,7 +2,7 @@ package br.com.Views;
 
 import br.com.DAO.ConexaoDAO;
 import br.com.DAO.LaboratorioDAO;
-import br.com.DTO.EquipamentoDTO;
+import br.com.DTO.MaquinaDTO;
 import br.com.DTO.LaboratorioDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -190,8 +190,7 @@ public class TelaLaboratorio extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton3)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton5)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                                        .addComponent(jButton5)))))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
